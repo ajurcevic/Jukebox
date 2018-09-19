@@ -365,13 +365,11 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
                     // Fallback on earlier versions
                     player.play()
                 }
-            } else {
-                if currentItem == nil{
-                    //fixes issue with library crash when resuming playback from audio interruption
-                    return
-                }
-                currentItem!.refreshPlayerItem(withAsset: currentItem!.playerItem!.asset)
-                startNewPlayer(forItem: currentItem!.playerItem!)
+            } else if let currentItem = currentItem, let playerItem = currentItem.playerItem {
+                currentItem.refreshPlayerItem(withAsset: playerItem.asset)
+                startNewPlayer(forItem: playerItem)
+//            currentItem!.refreshPlayerItem(withAsset: currentItem!.playerItem!.asset)
+//                startNewPlayer(forItem: currentItem!.playerItem!)
             }
             state = .playing
         }
