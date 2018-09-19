@@ -486,12 +486,13 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
     }
     
     @objc func handleStall() {
-        player?.pause()
+        guard let player = player else { return }
+        player.pause()
+
         if #available(iOS 10.0, *) {
-            player?.playImmediately(atRate: 1.0)
+            player.playImmediately(atRate: 1.0)
         } else {
-            // Fallback on earlier versions
-            player?.play()
+            player.play()
         }
     }
     
