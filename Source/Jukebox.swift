@@ -139,7 +139,12 @@ extension Jukebox {
         player.seek(to: CMTimeMake(Int64(second), 1))
         item.update()
         if shouldPlay {
-            player.play()
+            if #available(iOS 10.0, *) {
+                player.playImmediately(atRate: 1.0)
+            } else {
+                // Fallback on earlier versions
+                player.play()
+            }
             if state != .playing {
                 state = .playing
             }
@@ -354,7 +359,12 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
         if state != .playing {
             startProgressTimer()
             if let player = player {
-                player.play()
+                if #available(iOS 10.0, *) {
+                    player.playImmediately(atRate: 1.0)
+                } else {
+                    // Fallback on earlier versions
+                    player.play()
+                }
             } else {
                 if currentItem == nil{
                     //fixes issue with library crash when resuming playback from audio interruption
@@ -477,7 +487,12 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
     
     @objc func handleStall() {
         player?.pause()
-        player?.play()
+        if #available(iOS 10.0, *) {
+            player?.playImmediately(atRate: 1.0)
+        } else {
+            // Fallback on earlier versions
+            player?.play()
+        }
     }
     
     @objc func playerItemDidPlayToEnd(_ notification : Notification){
