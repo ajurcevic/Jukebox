@@ -139,7 +139,12 @@ extension Jukebox {
         player.seek(to: CMTimeMake(Int64(second), 1))
         item.update()
         if shouldPlay {
-            player.play()
+            if #available(iOS 10.0, *) {
+                player.playImmediately(atRate: 1.0)
+            } else {
+                // Fallback on earlier versions
+                player.play()
+            }
             if state != .playing {
                 state = .playing
             }
@@ -354,14 +359,17 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
         if state != .playing {
             startProgressTimer()
             if let player = player {
-                player.play()
-            } else {
-                if currentItem == nil{
-                    //fixes issue with library crash when resuming playback from audio interruption
-                    return
+                if #available(iOS 10.0, *) {
+                    player.playImmediately(atRate: 1.0)
+                } else {
+                    // Fallback on earlier versions
+                    player.play()
                 }
-                currentItem!.refreshPlayerItem(withAsset: currentItem!.playerItem!.asset)
-                startNewPlayer(forItem: currentItem!.playerItem!)
+            } else if let currentItem = currentItem, let playerItem = currentItem.playerItem {
+                currentItem.refreshPlayerItem(withAsset: playerItem.asset)
+                startNewPlayer(forItem: playerItem)
+//            currentItem!.refreshPlayerItem(withAsset: currentItem!.playerItem!.asset)
+//                startNewPlayer(forItem: currentItem!.playerItem!)
             }
             state = .playing
         }
@@ -476,8 +484,14 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
     }
     
     @objc func handleStall() {
-        player?.pause()
-        player?.play()
+        guard let player = player else { return }
+        player.pause()
+
+        if #available(iOS 10.0, *) {
+            player.playImmediately(atRate: 1.0)
+        } else {
+            player.play()
+        }
     }
     
     @objc func playerItemDidPlayToEnd(_ notification : Notification){
