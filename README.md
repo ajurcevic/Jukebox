@@ -1,6 +1,6 @@
 ![Jukebox: audio player in Swift](https://raw.githubusercontent.com/teodorpatras/Jukebox/master/assets/jukebox.png)
 
-![Swift4](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat")
+![Swift4](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat")
 [![Platform](https://img.shields.io/cocoapods/p/Jukebox.svg?style=flat)](http://cocoapods.org/pods/Jukebox)
 [![Build Status](https://travis-ci.org/teodorpatras/Jukebox.svg)](https://travis-ci.org/teodorpatras/Jukebox)
 [![Version](https://img.shields.io/cocoapods/v/Jukebox.svg?style=flat)](http://cocoapods.org/pods/Jukebox)
@@ -77,8 +77,8 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ##<a name="supported-versions"> Supported OS & SDK versions </a>
 
-- iOS 8.0+
-- Xcode 7+
+- iOS 10.2+
+- Xcode 8+
 
 ##<a name="usage"> Usage </a>
 
