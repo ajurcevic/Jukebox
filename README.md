@@ -1,11 +1,11 @@
-![Jukebox: audio player in Swift](https://raw.githubusercontent.com/teodorpatras/Jukebox/master/assets/jukebox.png)
+![Jukebox: audio player in Swift](https://raw.githubusercontent.com/ajurcevic/Jukebox/master/assets/jukebox.png)
 
-![Swift4](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat")
-[![Platform](https://img.shields.io/cocoapods/p/Jukebox.svg?style=flat)](http://cocoapods.org/pods/Jukebox)
-[![Build Status](https://travis-ci.org/teodorpatras/Jukebox.svg)](https://travis-ci.org/teodorpatras/Jukebox)
-[![Version](https://img.shields.io/cocoapods/v/Jukebox.svg?style=flat)](http://cocoapods.org/pods/Jukebox)
+![Swift5](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat")
+[![Platform](https://img.shields.io/cocoapods/p/Jukebox.svg?style=flat)](http://cocoapods.org/pods/JukeboxV2)
+[![Build Status](https://travis-ci.org/ajurcevic/Jukebox.svg)](https://travis-ci.org/ajurcevic/Jukebox)
+[![Version](https://img.shields.io/cocoapods/v/Jukebox.svg?style=flat)](http://cocoapods.org/pods/JukeboxV2)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![License](https://img.shields.io/cocoapods/l/Jukebox.svg?style=flat)](http://cocoapods.org/pods/Jukebox)
+[![License](https://img.shields.io/cocoapods/l/Jukebox.svg?style=flat)](http://cocoapods.org/pods/JukeboxV2)
 
 Jukebox is an iOS audio player written in Swift.
 
@@ -43,7 +43,7 @@ $ gem install cocoapods
 To integrate ``Jukebox`` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'Jukebox'
+pod 'JukeboxV2'
 ```
 
 Then, run the following command:
@@ -63,10 +63,10 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate `Jukebox` into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate `JukeboxV2` into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "teodorpatras/Jukebox"
+github "ajurcevic/JukeboxV2"
 ```
 
 Run `carthage update` to build the framework and drag the built `Jukebox.framework` into your Xcode project.
@@ -259,4 +259,4 @@ public protocol JukeboxDelegate: class {
 
 ##<a name="contact"> Contact </a>
 
-You can follow or drop me a line on [my Twitter account](https://twitter.com/teodorpatras). If you find any issues on the project, you can open a ticket. Pull requests are also welcome.
+You can follow or drop me a line on [my Twitter account](https://twitter.com/adrianjurcevic). If you find any issues on the project, you can open a ticket. Pull requests are also welcome.
