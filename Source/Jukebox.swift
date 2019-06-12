@@ -454,7 +454,7 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
     }
     
     fileprivate func configureAudioSession() throws {
-        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+        try AVAudioSession.sharedInstance().setCategory(.playback)
         try AVAudioSession.sharedInstance().setMode(.default)
         try AVAudioSession.sharedInstance().setActive(true)
     }
