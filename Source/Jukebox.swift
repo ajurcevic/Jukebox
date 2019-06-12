@@ -481,6 +481,8 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
                     self.resumePlayback()
                 }
             }
+        @unknown default:
+            self.stop()
         }
     }
     
