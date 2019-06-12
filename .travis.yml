@@ -6,7 +6,7 @@ osx_image: xcode10.2
 env:
   global:
     - WORKSPACE=Jukebox.xcworkspace
-    - FRAMEWORK_NAME=JukeboxV2
+    - FRAMEWORK_NAME=Jukebox
     - PROJECT=Jukebox.xcodeproj
     - SCHEME=Jukebox
     - SDK=iphonesimulator10
