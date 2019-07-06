@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Teodor Patras' => 'me@teodorpatras.com', 'Adrian Jurcevic' => 'ajurcevic@outlook.com' }
   s.source           = { :git => 'https://github.com/ajurcevic/Jukebox.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/adrianjurcevic'
-  s.ios.deployment_target = '10.0' 
+  s.ios.deployment_target = '10.2' 
 
   s.source_files = 'Source/*.swift'
 
